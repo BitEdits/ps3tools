@@ -10,10 +10,6 @@ COMMON  =	tools.o aes.o sha1.o ec.o bn.o syscon_m.o self.o mingw_mmap.o
 DEPS    =	Makefile tools.h types.h self.h common.h
 OSNAME  =	$(shell uname -s)
 
-ifeq ($(findstring MINGW, $(OSNAME)), MINGW)
-COMMON  += mingw_mmap.o
-endif
-
 CC      =	gcc
 CFLAGS  =	-g -O2 -Wall -W
 LDLIBS  =	-lz
